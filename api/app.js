@@ -2,6 +2,7 @@
 
 // load modules
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
 
@@ -19,6 +20,12 @@ const app = express();
 app.use(morgan('dev'));
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Test database connection
 console.log('About to test Sequelize connection...');
