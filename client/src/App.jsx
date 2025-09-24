@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from '../components/Header.jsx'
+import Courses from '../components/Courses.jsx'
 
 const App = () => {
   return (
