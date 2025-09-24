@@ -1,13 +1,16 @@
 import { useState } from 'react';
-import Header from '../components/Header.jsx'
-import Courses from '../components/Courses.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from '../components/Header.jsx';
+import Courses from '../components/Courses.jsx';
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <h1>Hello World</h1>
-    </>
+      <Routes>
+        <Route path="/" element={<Courses />} />
+      </Routes>
+    </Router>
   )
 }
 
